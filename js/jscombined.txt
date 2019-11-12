@@ -1,0 +1,67 @@
+<!--
+        <script>
+
+            // Connecting To server
+            var socket = io.connect('http://localhost:4000');
+            
+            
+            //API Key for Here Maps            
+            var platform = new H.service.Platform({
+                'apikey': 'Ylstvi4R2FzshO1fLLI4rnvBC3gf5qo-25otEp4Cpjo'
+            });
+
+            // Initializing Map
+            var defaultLayers = platform.createDefaultLayers();            
+            var maptypes = platform.createDefaultLayers();
+            var map = new H.Map(
+                document.getElementById('mapCont'),
+                maptypes.raster.satellite.map,
+                {
+                  zoom: 15
+                });            
+            
+            window.addEventListener('resize', () => map.getViewPort().resize());
+            var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));            
+            // Create the default UI components for map
+            var ui = H.ui.UI.createDefault(map, defaultLayers);
+            
+            // Marker icon
+            var pngIcon = new H.map.Icon("images/baja.png", {size: {w: 35, h: 35}});            
+            var carMarker = new H.map.Marker({lat:40.4, lng: -3.6833} , {icon: pngIcon});
+                map.addObject(carMarker);
+            
+            
+            var b1 = document.getElementById('ctrlockbt');
+            var cl = document.getElementById('ctrlock');
+            var centerlock = 1;
+
+            b1.onclick = function() {
+                if (b1.value == "1") {
+                    centerlock = 0;
+                    cl.innerHTML = "Off";
+                    b1.value = "0";
+                }
+                else{
+                    centerlock = 1;
+                    cl.innerHTML = "On";
+                    b1.value = "1";
+                }
+            }; 
+
+            socket.on('coord', function(data) { //As coord data is received 
+                //Log the coords in web console
+                console.log(data.coord);
+                //split the single string into a array elements by commas so that they may be manipulated easily
+                var latlng = data.coord.split(",");
+
+                document.getElementById('date').innerHTML = data.date; //update the date
+                document.getElementById('time').innerHTML = data.time; //update the date
+
+                if (centerlock == 1){
+                    map.setCenter({lat:latlng[0], lng:latlng[1]});
+                }
+                map.removeObject(carMarker);
+                carMarker = new H.map.Marker({lat:latlng[0], lng:latlng[1]} , {icon: pngIcon});
+                map.addObject(carMarker);   
+            });
+        </script> -->

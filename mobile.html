@@ -1,0 +1,58 @@
+<!-- DOCTYPE html -->
+<html>
+
+    <head>
+        <title>Piranha Racing - GPS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel = "stylesheet" type = "text/css" href = "css/hereapi/mapsjs-ui.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/mainm.css" />
+    </head>
+
+    <body>
+
+        <div class="mpage">
+            <div class="section">
+                <img class="logo" src="images/pna.png" alt="GPS">
+
+                <div class="databox">
+                    <h4>CENTER - <span id="ctrlock">On</span><br>SPEED - <span id="speed">0.00 kmph</span></h4>
+                </div>
+            </div>
+
+            <div class="mapsec">
+                    <div class="gpscontainer" id="mapCont"></div>
+            </div>
+            <div class="section2">
+                <div class="butbox">
+                    <input type="image" src="images/gpin.png" id="ctrlockbt" class="smlbt" value="1"/>                
+                    <input type="image" src="images/gmapin.png" id="gmap" class="smlbt">                
+                    <input type="image" src="images/play.png" id="play" class="smlbt">                
+                    <input type="image" src="images/pause.png" id="pause" class="smlbt">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- JS Import Begin Here-->
+
+        <!-- Socketio js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+        <!-- Here Maps js web link link in case of emegency https://js.api.here.com/v3/3.1/ replace "js/hereapi/" with the link -->
+
+        <!-- Here Maps js-->
+        <script src="js/hereapi/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hereapi/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hereapi/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hereapi/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hereapi/mapsjs-clustering.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hereapi/mapsjs-data.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Local JS-->
+        <script src="js/mainm.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/hmap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/toggle.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

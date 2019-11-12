@@ -1,0 +1,116 @@
+body {
+    margin: 0px;
+    border: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+p {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    flex-direction: row;
+    display: flex;
+}
+
+.section {
+    width: 30vw;
+    background: rgb(16, 14, 23);
+    background: linear-gradient(352deg, rgba(16, 14, 23, 1) 0%, rgba(60, 56, 77, 1) 100%);
+    text-align: center;
+}
+
+.mapsec {
+    width: 70vw;
+    background: black;
+    height: 100vh;
+}
+
+.gpscontainer {
+    margin: 0px;
+    padding: 0px;
+    /*
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 30px;*/
+    overflow: hidden;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    height: 8vw;
+    padding: 2vw;
+}
+
+.databox {
+    border-radius: 30px;
+    background: rgb(150, 1, 79);
+    background: linear-gradient(135deg, rgba(150, 1, 79, 1) 0%, rgba(255, 128, 50, 1) 79%);
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: 26vw;
+    margin: 2vw;
+    position: relative;
+    z-index: 1;
+}
+
+.databox::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 30px;
+    background: rgb(150, 1, 109);
+    background: linear-gradient(347deg, rgba(150, 1, 109, 1) 19%, rgba(196, 113, 255, 1) 100%);
+    z-index: -1;
+    transition: opacity 1s linear;
+    opacity: 0;
+}
+
+.databox:hover::before {
+    opacity: 1;
+}
+
+.butbox {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.smlbt {
+    height: 5vh;
+    width: 5vh;
+    padding: 2vh;
+    transition: all 0.5s ease-in-out;
+}
+
+.smlbt:hover {
+    height: 5vh;
+    width: 5vh;
+    transform: scale(1.5);
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+    outline: none !important;
+}

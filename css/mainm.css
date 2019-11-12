@@ -1,0 +1,115 @@
+body {
+    margin: 0px;
+    border: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+p {
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    flex-direction: column;
+    display: flex;
+}
+
+.section {
+    width: 100vw;
+    background: rgb(16, 14, 23);
+    background: linear-gradient(352deg, rgba(16, 14, 23, 1) 0%, rgba(60, 56, 77, 1) 100%);
+    text-align: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 {
+    width: 100vw;
+    background: rgb(16, 14, 23);
+    background: linear-gradient(352deg, rgba(16, 14, 23, 1) 0%, rgba(60, 56, 77, 1) 100%);
+    text-align: center;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.mapsec {
+    height: 75vh;
+    width: 100vw;
+    background: black;
+}
+
+.gpscontainer {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    height: 10vh;
+    padding: 2vh;
+    margin: 0px;
+}
+
+.databox {
+    background: rgb(150, 1, 79);
+    background: linear-gradient(135deg, rgba(150, 1, 79, 1) 0%, rgba(255, 128, 50, 1) 79%);
+    color: white;
+    padding: 2vh;
+    height: 10vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.databox::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(150, 1, 109);
+    background: linear-gradient(347deg, rgba(150, 1, 109, 1) 19%, rgba(196, 113, 255, 1) 100%);
+    z-index: -1;
+    transition: opacity 1s linear;
+    opacity: 0;
+}
+
+.databox:hover::before {
+    opacity: 1;
+}
+
+.butbox {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.smlbt {
+    height: 5vh;
+    width: 5vh;
+    padding: 1vh;
+    margin: 2vh;
+    transition: all 0.5s ease-in-out;
+}

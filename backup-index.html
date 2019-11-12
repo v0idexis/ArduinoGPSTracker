@@ -1,0 +1,41 @@
+<!-- DOCTYPE html -->
+<html>
+    <head>
+        <title>Backup GPS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="margin: 0px;border: 0px;">
+        <!-- <h1>GPS</h1> -->
+        <img src="piranha.png" alt="GPS" style="height: 15vh;display: block;margin: auto;padding-top: 2vh">
+        <h4>Date: <span id="date"></span>  Time: <span id="time"></span></h4>
+        <div class="gpscontainer" style="position: relative;height: 70vh; width:100vw; margin: 0px; padding: 0px;">
+            <iframe src="http://maps.google.com/maps?q=description+(name)+%4000.000000,00.000000&t=&z=13&ie=UTF8&iwloc=&output=embed" id="myGPS" style="height: 100%; width: 100%; margin:0px;padding: 0px;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0"></iframe>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:4000'); //connect to server
+            
+            socket.on('coord', function(data) { //As coord data is received 
+                console.log(data.coord);
+                document.getElementById('date').innerHTML = data.date; //update the date
+                document.getElementById('time').innerHTML = data.time; //update the date
+                document.getElementById('myGPS').src = "http://maps.google.com/maps?q=description+(name)+%40"+data.coord+"&t=k&z=15&ie=UTF8&iwloc=&output=embed"; //update gmap
+                
+            });
+        </script>
+    </body>
+    <style>
+        h1 {
+        text-align: center;
+        font-family: 'Century Gothic', sans-serif;
+        }
+        h4 {
+        text-align: center;
+        font-family: 'Century Gothic', sans-serif;
+        }
+        p {
+        text-align: center;
+        font-family: 'Century Gothic', sans-serif;
+        }
+    </style>
+</html>
